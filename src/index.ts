@@ -1,5 +1,3 @@
-import { part1 } from "./2029/day_02/part_1";
-
 console.log(
   "-------------------------------------------------------------------------------"
 );
@@ -32,5 +30,3 @@ console.log(
 );
 console.log("");
 console.log("you can also start tests using `npm test`");
-
-part1();

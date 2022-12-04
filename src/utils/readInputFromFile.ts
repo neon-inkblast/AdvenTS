@@ -5,7 +5,7 @@ export function readFromFile(
   filename: string,
   dir: string = __dirname,
   log: boolean = false
-) {
+): string[] {
   const data = fs.readFileSync(path.join(dir, filename), "utf8");
   const lines = data.split(/\n/);
   if (log) {
@@ -14,6 +14,6 @@ export function readFromFile(
   return lines;
 }
 
-export function readInputFromFile(dir: string, log: boolean = false) {
+export function readInputFromFile(dir: string, log: boolean = false): string[] {
   return readFromFile("_input.txt", dir, log);
 }

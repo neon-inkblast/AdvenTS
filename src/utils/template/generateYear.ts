@@ -61,7 +61,7 @@ function main() {
 
     console.log(`🎁 On the ${ordinal(i)} day of Xmas... `);
 
-    const dayFolderPath = path.join(basePath, `day_${dayNice}`);
+    const dayFolderPath = path.join(basePath, `day`, dayNice);
     fs.mkdirSync(path.join(dayFolderPath), { recursive: true });
     copyDayFiles(templatePath, dayFolderPath, dayNice, replaceToken);
     copyAndReplace(
@@ -72,11 +72,13 @@ function main() {
     );
   }
   console.log(" ");
-  console.log("🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
-  console.log(`🎅                                                      🎅`);
-  console.log(`🎄  Christmas has come, all your files are ready to go! 🎄`);
-  console.log(`🎅                                                      🎅`);
-  console.log("🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
+  console.log("  🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
+  console.log(`🎅                                                         🎅`);
+  console.log(
+    `🎄   Christmas has come, your ${year} files are ready to go!  🎄`
+  );
+  console.log(`🎅                                                         🎅`);
+  console.log("  🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
 }
 
 main();
