@@ -4,13 +4,19 @@ Project template for Advent of Code challenges
 
 ### Get started
 
-To get started, run the `npm run generate` command followed by a year argument
-eg. `npm run generate 2022`
+First thing, obvio, `npm i`.
 
-after that, modify the file found at `./src/index.ts` to run any year, day, or part
+then run the `npm run generate` command followed by a year.  
+eg.
 
-for example, after running `npm run generate 2022`
-change the index file to something like...
+```bash
+npm run generate 2022
+```
+
+After that, modify the file found at `./src/index.ts` to run any `year`, `day`, or `part`
+
+Example: After running `npm run generate 2022`
+change the index.ts file content to something like...
 
 ---
 

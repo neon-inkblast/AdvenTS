@@ -1,5 +1,5 @@
 {
-  "name": "adventofcode-ts",
+  "name": "adven-ts",
   "version": "1.0.0",
   "description": "Project template for Advent of Code challenges in TypeScript",
   "main": "index.ts",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "AoC",
-    "Adevent",
+    "Advent",
     "of",
     "Code",
     "Typescript",
