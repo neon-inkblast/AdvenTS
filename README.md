@@ -15,9 +15,9 @@ change the index file to something like...
 ---
 
 ```js
-import { run2021 } from "./2022";
+import { run2022 } from "./2022";
 
-run2021();
+run2022();
 ```
 
 or
