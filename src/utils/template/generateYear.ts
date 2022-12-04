@@ -34,7 +34,6 @@ function copyDayFiles(
   files.forEach(function (file) {
     var source = path.join(sourceFolder, file);
     var dest = path.join(targetFolder, file);
-    console.log(day, replaceToken, file);
     copyAndReplace(source, dest, replaceToken, day);
   });
 }
@@ -56,11 +55,18 @@ function main() {
   const replaceToken = "XX";
   const templatePath = path.join(__dirname, `day_${replaceToken}`);
   const basePath = path.join(process.cwd(), `src/${year}`);
-  for (let i = 2; i > 0; i--) {
+  for (let i = 1; i <= 25; i++) {
     const dayNice = makeLeadingZeroDay(i);
-    const dayFolderPath = path.join(basePath, dayNice);
+    console.log(`Making Day ${dayNice}`);
+    const dayFolderPath = path.join(basePath, `day_${dayNice}`);
     fs.mkdirSync(path.join(dayFolderPath), { recursive: true });
     copyDayFiles(templatePath, dayFolderPath, dayNice, replaceToken);
+    copyAndReplace(
+      path.join(__dirname, "index.ts"),
+      path.join(basePath, "index.ts"),
+      "YYYY",
+      year.toString()
+    );
   }
 }
 
