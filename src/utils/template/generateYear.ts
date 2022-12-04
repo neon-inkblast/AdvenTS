@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import ordinal from "ordinal";
 
 function throwError(msg: string) {
   console.error(msg);
@@ -57,7 +58,9 @@ function main() {
   const basePath = path.join(process.cwd(), `src/${year}`);
   for (let i = 1; i <= 25; i++) {
     const dayNice = makeLeadingZeroDay(i);
-    console.log(`Making Day ${dayNice}`);
+
+    console.log(`🎁 On the ${ordinal(i)} day of Xmas... `);
+
     const dayFolderPath = path.join(basePath, `day_${dayNice}`);
     fs.mkdirSync(path.join(dayFolderPath), { recursive: true });
     copyDayFiles(templatePath, dayFolderPath, dayNice, replaceToken);
@@ -68,6 +71,12 @@ function main() {
       year.toString()
     );
   }
+  console.log(" ");
+  console.log("🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
+  console.log(`🎅                                                      🎅`);
+  console.log(`🎄  Christmas has come, all your files are ready to go! 🎄`);
+  console.log(`🎅                                                      🎅`);
+  console.log("🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
 }
 
 main();
