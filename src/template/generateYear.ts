@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import ordinal from "ordinal";
+import { PRETTY } from "../utils";
 
 function throwError(msg: string) {
   console.error(msg);
@@ -16,7 +17,7 @@ function checkYear(year: number) {
   }
   if (year > 3000) {
     throwError(
-      `Year arg "${year}" is too high! If this is still a thing next millenia, I'll rewrite it...`
+      `Year arg "${year}" is too high! If this is still a thing next millenia, I'll rewrite it...`,
     );
   }
 }
@@ -29,7 +30,7 @@ function copyDayFiles(
   sourceFolder: string,
   targetFolder: string,
   day: string,
-  replaceToken: string
+  replaceToken: string,
 ) {
   const files = fs.readdirSync(sourceFolder);
   files.forEach(function (file) {
@@ -43,7 +44,7 @@ function copyAndReplace(
   filePath: string,
   destPath: string,
   replaceToken: string,
-  replaceWith: string
+  replaceWith: string,
 ) {
   const data = fs.readFileSync(filePath);
   const replaced = data.toString().replaceAll(replaceToken, replaceWith);
@@ -68,17 +69,15 @@ function main() {
       path.join(__dirname, "index.ts"),
       path.join(basePath, "index.ts"),
       "YYYY",
-      year.toString()
+      year.toString(),
     );
   }
-  console.log(" ");
-  console.log("  🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
-  console.log(`🎅                                                         🎅`);
-  console.log(
-    `🎄   Christmas has come, your ${year} files are ready to go!  🎄`
-  );
-  console.log(`🎅                                                         🎅`);
-  console.log("  🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄");
+  console.log(PRETTY.EMPTY);
+  console.log(PRETTY.XMAS);
+  console.log(`🎅                                                          🎅`);
+  console.log(`🎄   Christmas has come, your ${year} files are ready to go!   🎄`);
+  console.log(`🎅                                                          🎅`);
+  console.log(PRETTY.XMAS);
 }
 
 main();
