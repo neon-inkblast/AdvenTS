@@ -1,4 +1,4 @@
-import { PRETTY, printYearHeader } from "../utils";
+import { PRETTY, print, printYearHeader } from "../utils";
 import { day_01 } from "./01";
 import { day_02 } from "./02";
 import { day_03 } from "./03";
@@ -55,29 +55,29 @@ export function runYYYY() {
   ];
 
   printYearHeader("YYYY");
-  console.log(PRETTY.EMPTY);
-  console.log(PRETTY.XMAS);
-  console.log(PRETTY.EMPTY);
+  print(PRETTY.EMPTY);
+  print(PRETTY.XMAS);
+  print(PRETTY.EMPTY);
 
   run.forEach((day, index) => {
     if (index === 0) {
-      console.log(PRETTY.BORDER_TOP);
-      console.log(PRETTY.EMPTY);
+      print(PRETTY.BORDER_TOP);
+      print(PRETTY.EMPTY);
     }
 
     day();
 
     if (index !== run.length - 1) {
-      console.log(PRETTY.EMPTY);
-      console.log(PRETTY.BORDER_MID);
-      console.log(PRETTY.EMPTY);
+      print(PRETTY.EMPTY);
+      print(PRETTY.BORDER_MID);
+      print(PRETTY.EMPTY);
     } else {
-      console.log(PRETTY.EMPTY);
-      console.log(PRETTY.BORDER_BTM);
+      print(PRETTY.EMPTY);
+      print(PRETTY.BORDER_BTM);
     }
   });
 
-  console.log(PRETTY.EMPTY);
-  console.log(PRETTY.XMAS);
-  console.log(PRETTY.EMPTY);
+  print(PRETTY.EMPTY);
+  print(PRETTY.XMAS);
+  print(PRETTY.EMPTY);
 }

@@ -1,7 +1,7 @@
 import fs from "fs";
-import path from "path";
 import ordinal from "ordinal";
-import { PRETTY } from "../utils";
+import path from "path";
+import { PRETTY, print } from "../utils";
 
 function throwError(msg: string) {
   console.error(msg);
@@ -60,7 +60,7 @@ function main() {
   for (let i = 1; i <= 25; i++) {
     const dayNice = makeLeadingZeroDay(i);
 
-    console.log(`🎁 On the ${ordinal(i)} day of Xmas... `);
+    print(`🎁 On the ${ordinal(i)} day of Xmas... `);
 
     const dayFolderPath = path.join(basePath, dayNice);
     fs.mkdirSync(path.join(dayFolderPath), { recursive: true });
@@ -72,12 +72,12 @@ function main() {
       year.toString(),
     );
   }
-  console.log(PRETTY.EMPTY);
-  console.log(PRETTY.XMAS);
-  console.log(`🎅                                                          🎅`);
-  console.log(`🎄   Christmas has come, your ${year} files are ready to go!   🎄`);
-  console.log(`🎅                                                          🎅`);
-  console.log(PRETTY.XMAS);
+  print(PRETTY.EMPTY);
+  print(PRETTY.XMAS);
+  print(`🎅                                                          🎅`);
+  print(`🎄   Christmas has come, your ${year} files are ready to go!   🎄`);
+  print(`🎅                                                          🎅`);
+  print(PRETTY.XMAS);
 }
 
 main();
