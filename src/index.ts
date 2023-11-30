@@ -1,6 +1,5 @@
 import chalk from "chalk";
 import { print, PRETTY } from "./utils";
-import { run2023 } from "./2023";
 
 print(PRETTY.HEADER);
 print(chalk.red("Get Started!"));
