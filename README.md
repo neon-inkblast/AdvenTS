@@ -22,8 +22,10 @@ Run `npm start` to execute your solutions.
 There is also a watch mode, which is handy when actively working on them, useable with `npm run watch`.
 
 
-### Examples
+### Examples  
+
 After running `npm run generate 2023`
+Replace the contents of `./src/index.ts` with something like the example code below
 
 ---
 
