@@ -14,8 +14,8 @@ console.log("change this file to something like...");
 console.log(
   "-------------------------------------------------------------------------------"
 );
-console.log(`import { run2021 } from "./2021";`);
-console.log(`run2021()`);
+console.log(`import { run2021 } from "./2022";`);
+console.log(`run2022();`);
 console.log(
   "-------------------------------------------------------------------------------"
 );
@@ -23,8 +23,8 @@ console.log("or");
 console.log(
   "-------------------------------------------------------------------------------"
 );
-console.log(`import { day_04 } from "./2029/day_04/day_04";`);
-console.log(`day04()`);
+console.log(`import { day_04 } from "./2022/04";`);
+console.log(`day04();`);
 console.log(
   "-------------------------------------------------------------------------------"
 );

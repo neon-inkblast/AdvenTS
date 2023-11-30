@@ -29,15 +29,15 @@ run2022();
 or
 
 ```js
-import { day_04 } from "./2022/day_04/day_04";
+import { day_04 } from "./2022/04";
 
-day04();
+day_04();
 ```
 
 or
 
 ```js
-import { part1 } from "./2022/day_02/part_1";
+import { part1 } from "./2022/02/part_1";
 // day 2 part 1
 part1();
 ```
@@ -46,4 +46,6 @@ part1();
 
 ### Testing
 
-you can also start tests using `npm test`. Might be a nice way to TDD code...
+Test files are also generated so you can use the examples easily to test your code.  
+Start tests using `npm test`.  
+Delicious TDD...
