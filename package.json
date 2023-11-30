@@ -7,7 +7,7 @@
     "start": "nodemon ./src/index.ts",
     "build": "tsc",
     "test": "jest --watch",
-    "generate": "ts-node ./src/utils/template/generateYear.ts"
+    "generate": "ts-node ./src/template/generateYear.ts"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
     "of",
     "Code",
     "Typescript",
-    "2022"
+    "2022",
+    "2023"
   ],
   "author": "Ben Atkinson",
   "license": "MIT",

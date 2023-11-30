@@ -61,7 +61,7 @@ function main() {
 
     console.log(`🎁 On the ${ordinal(i)} day of Xmas... `);
 
-    const dayFolderPath = path.join(basePath, `day`, dayNice);
+    const dayFolderPath = path.join(basePath, dayNice);
     fs.mkdirSync(path.join(dayFolderPath), { recursive: true });
     copyDayFiles(templatePath, dayFolderPath, dayNice, replaceToken);
     copyAndReplace(
