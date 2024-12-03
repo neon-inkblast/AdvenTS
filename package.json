@@ -8,6 +8,7 @@
     "watch": "nodemon ./src/index.ts",
     "build": "tsc",
     "test": "jest --watch",
+    "scoreboard": "ts-node ./src/utils/scoreboard/scoreboard.ts",
     "generate": "ts-node ./src/template/generateYear.ts"
   },
   "repository": {
