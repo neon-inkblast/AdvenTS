@@ -12,11 +12,21 @@ export type Point = [number, number];
  * `Point[x, y, z]`
  */
 export type Point3D = [number, number, number];
-export type Directions = "U" | "R" | "D" | "L" | "UR" | "DR" | "UL" | "DL";
+export type Direction = "U" | "R" | "D" | "L" | "UR" | "DR" | "UL" | "DL";
+export const DIRECTION_OPPOSITE: Record<Direction, Direction> = {
+  U: "D",
+  D: "U",
+  R: "L",
+  L: "R",
+  UL: "DR",
+  DL: "UR",
+  UR: "DL",
+  DR: "UL",
+};
 /**
  * The 8 squares neighbouring a point on a 2D grid
  */
-export const DIRECTIONS: Record<Directions, Point> = {
+export const DIRECTIONS: Record<Direction, Point> = {
   U: [0, -1],
   R: [1, 0],
   D: [0, 1],
@@ -67,7 +77,10 @@ export function manhDistBetween(a: Point, b: Point): number {
  * y = p[1]
  * ```
  */
-export function getElementByPoint<T>(p: Point, grid: T[][]): T {
+export function getElementByPoint<T>(p: Point, grid: T[][]): T | null {
+  if (!isInGrid(p, grid)) {
+    return null;
+  }
   return grid[p[1]][p[0]];
 }
 
@@ -107,4 +120,12 @@ export function clampPoint<T>(p: Point, xRange: Point, yRange: Point): Point {
 
 export function clampPointInGrid<T>(p: Point, grid: T[][]): Point {
   return clampPoint(p, [0, grid[0].length - 1], [0, grid.length - 1]);
+}
+
+export function pointToString(p: Point) {
+  return `${p[0]},${p[1]}`;
+}
+
+export function drawGrid(grid: any[][]) {
+  console.log(grid.map((row) => row.join("")).join("\n"));
 }
