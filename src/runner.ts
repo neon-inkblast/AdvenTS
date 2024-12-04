@@ -8,7 +8,7 @@ const argv = yargs(hideBin(process.argv)).alias("year", "y").alias("day", "d").a
 const { year, day, part } = argv;
 if (!year) {
   console.error("Year required: eg `npm run aoc --year 2024");
-  exit(0);
+  exit(1);
 }
 
 // if no day, run the year script
@@ -16,6 +16,7 @@ if (!day) {
   try {
     const yearModule = await import(`./${year}/index.js`);
     yearModule[`run${year}`]();
+    exit(0);
   } catch (err: any) {
     if (err.code === "ERR_MODULE_NOT_FOUND") {
       console.error(`Files for year ${year} not found, did you type the wrong year?`);
@@ -32,6 +33,7 @@ if (!part) {
   try {
     const dayModule = await import(`./${year}/${padDay}/index.js`);
     dayModule[`day_${padDay}`]();
+    exit(0);
   } catch (err: any) {
     if (err.code === "ERR_MODULE_NOT_FOUND") {
       console.error(
@@ -48,6 +50,7 @@ if (!part) {
 try {
   const partModule = await import(`./${year}/${padDay}/part_${part}.js`);
   console.log(partModule[`part${part}`]());
+  exit(0);
 } catch (err: any) {
   if (err.code === "ERR_MODULE_NOT_FOUND") {
     console.error(
