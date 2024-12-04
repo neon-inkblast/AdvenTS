@@ -9,9 +9,9 @@
     "watch": "nodemon ./src/index.ts",
     "build": "tsc",
     "test": "vitest",
-    "scoreboard": "ts-node ./src/utils/scoreboard/scoreboard.ts",
     "generate": "tsc --noEmit && node --loader ts-node/esm ./src/template/generateYear.ts",
     "generate2": "tsx ./src/template/generateYear.ts"
+    "scoreboard": "tsx ./src/utils/scoreboard/scoreboard.ts",
   },
   "repository": {
     "type": "git",
