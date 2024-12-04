@@ -14,7 +14,7 @@
     "outDir": "dist",
     "moduleResolution": "nodenext" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "typeRoots": ["node_modules/@types"],
-    "types": ["node", "jest"]
+    "types": ["node"]
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["./src/**/*.test.ts", "src/template/**/*"]
