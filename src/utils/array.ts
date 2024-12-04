@@ -25,10 +25,10 @@ export function extendArray() {
     return this.map((x) => +x);
   };
   Array.prototype.min = function <T>(this: Array<T>) {
-    return this.map((x) => +x);
+    return sortAsc(this)[0];
   };
   Array.prototype.max = function <T>(this: Array<T>) {
-    return this.map((x) => +x);
+    return sortDesc(this)[0];
   };
 }
 
