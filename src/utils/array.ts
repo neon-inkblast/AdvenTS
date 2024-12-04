@@ -1,3 +1,37 @@
+declare global {
+  interface Array<T> {
+    sum(): number;
+    multiply(): number;
+    toNumbers(): number[];
+    min(): T;
+    max(): T;
+  }
+}
+
+export function extendArray() {
+  Array.prototype.sum = function <T>(this: Array<T>) {
+    if (this.length === 0) {
+      return 0;
+    }
+    return this.map((x) => +x).reduce((a, b) => a + b);
+  };
+  Array.prototype.multiply = function <T>(this: Array<T>) {
+    if (this.length === 0) {
+      return 0;
+    }
+    return this.map((x) => +x).reduce((a, b) => a * b);
+  };
+  Array.prototype.toNumbers = function <T>(this: Array<T>) {
+    return this.map((x) => +x);
+  };
+  Array.prototype.min = function <T>(this: Array<T>) {
+    return this.map((x) => +x);
+  };
+  Array.prototype.max = function <T>(this: Array<T>) {
+    return this.map((x) => +x);
+  };
+}
+
 export function sum<T>(arr: T[]): number {
   if (arr.length === 0) {
     return 0;
@@ -5,7 +39,7 @@ export function sum<T>(arr: T[]): number {
   return arr.map((x) => +x).reduce((a, b) => a + b);
 }
 
-export function multi<T>(arr: T[]): number {
+export function multiply<T>(arr: T[]): number {
   if (arr.length === 0) {
     return 0;
   }
@@ -23,23 +57,29 @@ export function multiplyArray(a: number[], b: number): number[] {
   return a.map((a) => a * b);
 }
 
-export function max<T>(arr: T[]): number {
-  return sortDesc(arr.slice())[0];
+export function max<T>(arr: T[], convertToNumbers = true): number | T {
+  return sortDesc(arr, convertToNumbers)[0];
 }
 
-export function min<T>(arr: T[]): number {
-  return sortAsc(arr.slice())[0];
+export function min<T>(arr: T[], convertToNumbers = true): number | T {
+  return sortAsc(arr, convertToNumbers)[0];
 }
 
-export function sortAsc(arr: any[]): any {
-  return arr.sort((a, b) => a - b);
+export function sortAsc<T>(arr: T[], convertToNumbers = false): Array<T | number> {
+  if (convertToNumbers) {
+    return arr.toNumbers().toSorted((a, b) => a - b);
+  }
+  return arr.toSorted((a, b) => (a === b ? 0 : a < b ? -1 : 1));
 }
 
-export function sortDesc(arr: any[]): any[] {
-  return arr.sort((a, b) => b - a);
+export function sortDesc<T>(arr: T[], convertToNumbers = false): Array<T | number> {
+  if (convertToNumbers) {
+    return arr.toNumbers().toSorted((a, b) => b - a);
+  }
+  return arr.toSorted((a, b) => (a === b ? 0 : a > b ? -1 : 1));
 }
 
-export function toNumbers(arr: string[] | number[]): number[] {
+export function toNumbers<T>(arr: T[]): number[] {
   return arr.map((x) => +x);
 }
 

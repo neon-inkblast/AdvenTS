@@ -1,7 +1,10 @@
 import fs from "fs";
-import ordinal from "ordinal";
 import path from "path";
-import { PRETTY, print } from "../utils";
+import { fileURLToPath } from "url";
+import { ordinal, PRETTY, print } from "../utils/index.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function throwError(msg: string) {
   console.error(msg);

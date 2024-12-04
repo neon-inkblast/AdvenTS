@@ -1,8 +1,9 @@
-import chalk from "chalk";
+import chalk, { Chalk } from "chalk";
+import convert from "color-convert";
 
 export const print = console.log;
 export const hsvX = (hue: number, message: string, multi = 10) => {
-  return chalk.hsv(hue * multi, 100, 100)(message);
+  return chalk.rgb(...convert.hsv.rgb([hue * multi, 100, 100]))(message);
 };
 
 export type PrettyStrings = Record<PRETTY_TYPE, string>;

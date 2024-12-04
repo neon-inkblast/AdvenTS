@@ -1,4 +1,4 @@
-import { sortDesc } from "./array";
+import { sortDesc } from "./array.js";
 
 export const cards = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"] as const;
 export type CardRank = (typeof cards)[number];
@@ -41,7 +41,7 @@ export function deriveHandRank(hand: string, useJokers = false): HandRank {
       .filter(([card]) => !useJokers || card !== "J")
       .map(([, count]) => +count),
   );
-  let jokerCount = useJokers ? handMap.J ?? 0 : 0;
+  let jokerCount = useJokers ? (handMap.J ?? 0) : 0;
   const high = (sortedCounts[0] ?? 0) + jokerCount;
   const second = sortedCounts[1];
 

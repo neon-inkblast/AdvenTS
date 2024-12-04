@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { print, PRETTY } from "./utils";
+import { print, PRETTY } from "./utils/index.js";
 
 print(PRETTY.HEADER);
 print(chalk.red("Get Started!"));

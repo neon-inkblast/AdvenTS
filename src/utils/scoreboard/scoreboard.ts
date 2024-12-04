@@ -1,8 +1,8 @@
 import chalk from "chalk";
-import ordinal from "ordinal";
+import convert from "color-convert";
 import prettyMilliseconds from "pretty-ms";
-import { pad, padLeft } from "../string";
-import * as apiData from "./api2024.json";
+import { ordinal, pad, padLeft } from "../string.js";
+import * as apiData from "./api2024.json" assert { type: "json" };
 // import * as apiData from "./api2023.json";
 
 parseLeaderboard();
@@ -38,7 +38,7 @@ function parseLeaderboard() {
       pad("  Time since last star", { width: 30, side: "right" }),
     ),
   );
-  (Object.values(apiData.members) as ScoreRecord[])
+  (Object.values(apiData) as ScoreRecord[])
     .filter((member) => member.stars > 0)
     .sort(scoreSort)
     .forEach((member) => {
@@ -55,7 +55,7 @@ function parseLeaderboard() {
       const timeString =
         "- " + prettyMilliseconds(Date.now() - member.last_star_ts * 1000) + " ago.";
       console.log(
-        chalk.hsv(colourChunk * (member.stars - 1), 80, 100)(
+        chalk.rgb(...convert.hsl.rgb([colourChunk * (member.stars - 1), 80, 100]))(
           pad(member.local_score.toString(), { width: 6, side: "right" }),
           pad(member.stars.toString(), { width: 6, side: "right" }),
           pad(member.name!.slice(0, 19), { width: 20, side: "right" }),

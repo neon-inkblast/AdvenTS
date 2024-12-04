@@ -1,10 +1,25 @@
-import { toNumbers } from "./array";
+import { toNumbers } from "./array.js";
 
 export type PadSide = "left" | "right" | "center";
 export interface PadOptions {
   width?: number;
   side?: PadSide;
   token?: string;
+}
+
+export function ordinalIndicator(input: number | string) {
+  const num = Math.abs(+input);
+  var cent = num % 100;
+  if (cent >= 10 && cent <= 20) return "th";
+  var dec = num % 10;
+  if (dec === 1) return "st";
+  if (dec === 2) return "nd";
+  if (dec === 3) return "rd";
+  return "th";
+}
+
+export function ordinal(input: number | string) {
+  return input + ordinalIndicator(input);
 }
 
 export function ints(input: string, includeNegatives = false): number[] {

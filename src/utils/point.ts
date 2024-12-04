@@ -1,4 +1,4 @@
-import { clamp } from "./math";
+import { clamp } from "./math.js";
 
 /**
  * A structure for representing a 2 dimensional point
