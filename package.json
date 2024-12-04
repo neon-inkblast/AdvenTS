@@ -6,11 +6,12 @@
   "main": "index.ts",
   "scripts": {
     "start": "tsx ./src/index.ts",
+    "aoc": "tsx ./src/runner.ts",
     "watch": "nodemon ./src/index.ts",
     "build": "tsc",
     "test": "vitest",
-    "generate": "tsc --noEmit && node --loader ts-node/esm ./src/template/generateYear.ts",
     "scoreboard": "tsx ./src/utils/scoreboard/scoreboard.ts",
+    "generate": "tsx ./src/template/generateYear.ts"
   },
   "repository": {
     "type": "git",
