@@ -8,8 +8,11 @@ print("by a year");
 print(`eg. ${chalk.yellow(`npm run generate 2023`)}`);
 
 print(PRETTY.EMPTY);
-print("after that, modify this file (./src/index.ts) to run any");
-print("year, day, or partial day");
+print(`after that, you can use the command ${chalk.yellow(`npm run aoc`)}`);
+print("to run any year, day, or partial day");
+print(
+  `with ${chalk.yellow(`--year (-y)`)}, ${chalk.yellow(`--day (-d)`)}, or ${chalk.yellow(`--part (-p)`)} flags`,
+);
 
 print(PRETTY.EMPTY);
 print(chalk.red("Examples"));
@@ -17,24 +20,21 @@ print(PRETTY.BORDER_DIV);
 print(PRETTY.EMPTY);
 print(chalk.green(`// run all solutions for the year 2023`));
 print(PRETTY.EMPTY);
-print(chalk.blueBright(`import { run2023 } from "./2023";`));
-print(chalk.blueBright(`run2023();`));
+print(chalk.blueBright(`npm run aoc -- --year 2023`));
 
 print(PRETTY.EMPTY);
 print(PRETTY.BORDER_DIV);
 print(PRETTY.EMPTY);
 print(chalk.green(`// run day 4 solutions from 2023`));
 print(PRETTY.EMPTY);
-print(chalk.blueBright(`import { day_04 } from "./2023/04";`));
-print(chalk.blueBright(`day04();`));
+print(chalk.blueBright(`npm run aoc -- -y 2023 -d 4`));
 
 print(PRETTY.EMPTY);
 print(PRETTY.BORDER_DIV);
 print(PRETTY.EMPTY);
 print(chalk.green(`// run the part 1 solution for day 3 from 2023`));
 print(PRETTY.EMPTY);
-print(chalk.blueBright(`import { part1 } from "./2023/03/part_1";`));
-print(chalk.blueBright(`console.log(part1());`));
+print(chalk.blueBright(`npm run aoc -- --year 2023 -d 4 --part 1`));
 
 print(PRETTY.EMPTY);
 print(PRETTY.BORDER_DIV);
