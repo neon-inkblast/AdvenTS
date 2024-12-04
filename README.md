@@ -8,6 +8,8 @@ First thing, use the template feature to build this into a new repository.
 
 Run `npm i` to install dependencies, there isn't many.
 
+Run `npm start` for instructions on how to generate and run solutions.
+
 ### Generating files for a year
 
 Use the `npm run generate` command followed by a year to generate files for a given year.
@@ -17,7 +19,7 @@ eg.
 npm run generate 2023
 ```
 
-This will generate a `year` folder containing a set of `day` folders that each contain the files for writing a solution for each `part` of the problem for a day.
+This will generate a `year` folder containing a set of `day` folders that each contain the files for writing a solution for each `part` of the problem for a day. Paste your puzzle input for a day into the `_input.txt` file.
 
 ### Running solutions
 
@@ -38,21 +40,18 @@ To specify which solutions to run, use the command line flags
 
 #### Examples
 
-Run all solutions for 2023
-
 ```bash
+# run all solutions for 2023
 npm run aoc -- --year 2023
 ```
 
-Run all solutions for 2023, day 4
-
 ```bash
+# run all solutions for 2023, day 4
 npm run aoc -- -y 2023 -d 4
 ```
 
-Run the solution for 2023, day 7, part 2
-
 ```bash
+# run the solution for 2023, day 7, part 2
 npm run aoc -- -y 2023 --day 7 --part 2
 ```
 
@@ -62,6 +61,13 @@ npm run aoc -- -y 2023 --day 7 --part 2
 
 Test files are also generated so you can use the examples easily to test your code.  
 Start tests using `npm test`.
+
+You can filter tests to a specific year or day like
+
+```bash
+# run tests for day 2 of 2024
+npm test 2024/02
+```
 
 ---
 
