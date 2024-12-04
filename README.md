@@ -56,10 +56,19 @@ Run the solution for 2023, day 7, part 2
 npm run aoc -- -y 2023 --day 7 --part 2
 ```
 
-### Alternative Runner
+---
 
-After running `npm run generate 2023`
-Replace the contents of `./src/index.ts` with something like the example code below
+### Testing
+
+Test files are also generated so you can use the examples easily to test your code.  
+Start tests using `npm test`.
+
+---
+
+### Alternative method to run solutions (old)
+
+After running `npm run generate 2023`  
+Replace the contents of `./src/index.ts` with something like the example code below  
 Then use `npm start` to run the index file.
 
 ---
@@ -92,13 +101,6 @@ console.log(part1());
 ```
 
 ---
-
-### Testing
-
-Test files are also generated so you can use the examples easily to test your code.  
-Start tests using `npm test`.
-
---
 
 ### Utils
 
