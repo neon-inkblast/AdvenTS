@@ -1,7 +1,7 @@
 {
   "name": "adven-ts",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Project template for Advent of Code challenges in TypeScript",
   "main": "index.ts",
   "scripts": {
