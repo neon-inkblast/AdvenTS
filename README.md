@@ -1,11 +1,11 @@
-# AdventOfCode-TS
+# 🎄AdventOfCode-TS
 
-Project template for Advent of Code challenges
+Project template for 🎄Advent of Code🎄 challenges
 
 ### Get started
 
 First thing, use the template feature to build this into a new repository.
-
+![Template button in Githubs UI.](https://raw.githubusercontent.com/neon-inkblast/AdvenTS/refs/heads/main/doc/template.png)
 Run `npm i` to install dependencies, there isn't many.
 
 Run `npm start` for instructions on how to generate and run solutions.
